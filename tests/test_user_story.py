@@ -5,7 +5,7 @@ def increment(ingredient: Ingredient, new_amount: int):
     return None
 
 
-def test_nothing():
+def test_increment():
     tomatoes = Ingredient(name="tomatoes", amount=0)
     assert increment(tomatoes, 1) == 0
 

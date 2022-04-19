@@ -10,3 +10,8 @@ class Ingredient:
 @dataclass
 class Food:
     ingredients: [Ingredient]
+
+
+@dataclass
+class Storage:
+    ingredients: [Ingredient]
