@@ -1,6 +1,9 @@
 from django.contrib.auth.models import User, Group
-from rest_framework import viewsets
+from rest_framework import viewsets, status
 from rest_framework import permissions
+from rest_framework.decorators import api_view
+from rest_framework.response import Response
+
 from djangoProject.restaurant.serialisers import UserSerializer, GroupSerializer
 
 
@@ -20,3 +23,11 @@ class GroupViewSet(viewsets.ModelViewSet):
     queryset = Group.objects.all()
     serializer_class = GroupSerializer
     permission_classes = [permissions.IsAuthenticated]
+
+
+@api_view(['GET'])
+def upcoming(request):
+    """
+    Retrieve, update or delete a code snippet.
+    """
+    return Response("roasted chicken", status.HTTP_200_OK)
