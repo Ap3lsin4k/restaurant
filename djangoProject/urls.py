@@ -29,5 +29,6 @@ urlpatterns = [
     # path('admin/', admin.site.urls),
     path('', include(router.urls)),
     path('upcoming/', views.upcoming),
+    path('breakfasts/', views.breakfasts),
     path('api-auth/', include('rest_framework.urls', namespace='rest_framework'))
 ]

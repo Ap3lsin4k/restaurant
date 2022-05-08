@@ -31,3 +31,20 @@ def upcoming(request):
     Retrieve, update or delete a code snippet.
     """
     return Response("roasted chicken", status.HTTP_200_OK)
+
+
+@api_view(['GET', 'POST'])
+def breakfasts(request):
+    """
+    Retrieve, update or delete a code snippet.
+    """
+    if request.method == 'GET':
+        return Response({
+            "ordered": 4,
+            "ingredients": {
+                "Chicken breast": 2.0,
+                "Wheat": 0.3
+            }
+        }, status.HTTP_200_OK)
+
+    return Response(status=status.HTTP_501_NOT_IMPLEMENTED)
